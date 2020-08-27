@@ -15,7 +15,7 @@ const CourseCart = (props) => {
                 <h3>Your Course Summery</h3>
                 <hr/>
                 <p>Your Added Course: {cart.length}</p>
-                <p>Price Total: {totalPrice}</p>
+                <p>Price Total: ${totalPrice.toFixed(2)}</p>
                 <hr/>
                 <p>Thank you for choosing us.</p>
             </div>
