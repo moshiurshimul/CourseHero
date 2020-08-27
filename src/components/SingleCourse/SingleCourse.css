@@ -3,3 +3,9 @@
     float: left;
     height: 400px;
 }
+
+.course-price {
+    color: salmon;
+    font-size: 20px;
+    font-weight: 500;
+}

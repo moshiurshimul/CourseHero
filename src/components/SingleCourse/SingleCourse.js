@@ -11,7 +11,7 @@ const SingleCourse = (props) => {
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <p>Instructor: {Instructor}</p>
-                <p>Course Price: ${price}</p>
+                <p className="course-price">Course Price: ${price}</p>
             </Card.Body>
             <Card.Footer>
                 <Button variant="primary" onClick={() => props.enrollClick(props.courselist)}>Enroll Now</Button>
