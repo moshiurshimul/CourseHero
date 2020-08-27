@@ -3,7 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import './SingleCourse.css'
 
 const SingleCourse = (props) => {
-    console.log(props.courselist)
+    // console.log(props)
     const {img, name, price, Instructor} = props.courselist;
     return (
         <Card style={{ width: '18rem' }}>
@@ -14,7 +14,7 @@ const SingleCourse = (props) => {
                 <p>Course Price: ${price}</p>
             </Card.Body>
             <Card.Footer>
-                <Button variant="primary">Enroll Now</Button>
+                <Button variant="primary" onClick={() => props.enrollClick(props.courselist)}>Enroll Now</Button>
             </Card.Footer>
         </Card>
     );

@@ -1,23 +1,28 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import courseData from '../../courseData/courseData';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import './Courses.css';
+import { useState } from 'react';
+import CourseCart from '../CourseCart/CourseCart';
 
 const Courses = () => {
+    const [courseCart, setCourseCart] = useState([])
+
+    const enrollHandler = (course) => {
+        const courseNewCart = [...courseCart, course]
+        setCourseCart(courseNewCart);
+
+    };
+
     const courseList = courseData;
-    console.log(courseList);
+    // console.log(courseList);
     return (<div className="course-body">
                 <div className="courses-container">
-                    {courseData.map(courses =><SingleCourse courselist={courses}></SingleCourse>)}
+                    {courseList.map(courses => <SingleCourse enrollClick={enrollHandler} key= {courses.key} courselist={courses}></SingleCourse>)}
                 </div>
                 <div className="cart-container">
-                    <h3>Your Summery</h3>
-                    <hr/>
-                    <p>Your Added Course: {}</p>
-                    <p>Price Total: {}</p>
-                    
-                </div>
+                    <CourseCart cart={courseCart}></CourseCart>
+                </div> 
             </div>
     );
 };
